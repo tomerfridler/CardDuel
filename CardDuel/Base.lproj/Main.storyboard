@@ -1,24 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="main-vc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24765"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+
+        <!-- SCREEN 1: Main / Menu -->
+        <scene sceneID="main-scene">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="main-vc" customClass="MainViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="main-view">
+                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="main-left-panel">
+                                <color key="backgroundColor" red="0.3" green="0.0" blue="0.5" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="main-right-panel">
+                                <color key="backgroundColor" red="0.3" green="0.0" blue="0.5" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="main-greeting-lbl">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="main-setname-btn">
+                                <state key="normal" title="Set Name"/>
+                                <connections>
+                                    <action selector="tappedSetName:" destination="main-vc" eventType="touchUpInside" id="main-setname-act"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="main-start-btn">
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="tappedStart:" destination="main-vc" eventType="touchUpInside" id="main-start-act"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="main-side-lbl">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeAreaLayoutGuide" id="main-safe"/>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="main-left-panel" firstAttribute="leading" secondItem="main-view" secondAttribute="leading" id="m01"/>
+                            <constraint firstItem="main-left-panel" firstAttribute="top" secondItem="main-view" secondAttribute="top" id="m02"/>
+                            <constraint firstItem="main-left-panel" firstAttribute="bottom" secondItem="main-view" secondAttribute="bottom" id="m03"/>
+                            <constraint firstItem="main-left-panel" firstAttribute="width" constant="245" id="m04"/>
+                            <constraint firstItem="main-right-panel" firstAttribute="trailing" secondItem="main-view" secondAttribute="trailing" id="m05"/>
+                            <constraint firstItem="main-right-panel" firstAttribute="top" secondItem="main-view" secondAttribute="top" id="m06"/>
+                            <constraint firstItem="main-right-panel" firstAttribute="bottom" secondItem="main-view" secondAttribute="bottom" id="m07"/>
+                            <constraint firstItem="main-right-panel" firstAttribute="width" constant="245" id="m08"/>
+                            <constraint firstItem="main-greeting-lbl" firstAttribute="centerX" secondItem="main-view" secondAttribute="centerX" id="m09"/>
+                            <constraint firstItem="main-greeting-lbl" firstAttribute="top" secondItem="main-view" secondAttribute="top" constant="20" id="m10"/>
+                            <constraint firstItem="main-greeting-lbl" firstAttribute="width" constant="300" id="m11"/>
+                            <constraint firstItem="main-greeting-lbl" firstAttribute="height" constant="36" id="m11b"/>
+                            <constraint firstItem="main-setname-btn" firstAttribute="centerX" secondItem="main-view" secondAttribute="centerX" id="m12"/>
+                            <constraint firstItem="main-setname-btn" firstAttribute="top" secondItem="main-greeting-lbl" secondAttribute="bottom" constant="20" id="m13"/>
+                            <constraint firstItem="main-setname-btn" firstAttribute="width" constant="200" id="m14"/>
+                            <constraint firstItem="main-setname-btn" firstAttribute="height" constant="44" id="m14b"/>
+                            <constraint firstItem="main-start-btn" firstAttribute="centerX" secondItem="main-view" secondAttribute="centerX" id="m15"/>
+                            <constraint firstItem="main-start-btn" firstAttribute="top" secondItem="main-setname-btn" secondAttribute="bottom" constant="16" id="m16"/>
+                            <constraint firstItem="main-start-btn" firstAttribute="width" constant="200" id="m17"/>
+                            <constraint firstItem="main-start-btn" firstAttribute="height" constant="44" id="m17b"/>
+                            <constraint firstItem="main-side-lbl" firstAttribute="centerX" secondItem="main-view" secondAttribute="centerX" id="m18"/>
+                            <constraint firstItem="main-side-lbl" firstAttribute="top" secondItem="main-start-btn" secondAttribute="bottom" constant="12" id="m19"/>
+                            <constraint firstItem="main-side-lbl" firstAttribute="width" constant="280" id="m20"/>
+                            <constraint firstItem="main-side-lbl" firstAttribute="height" constant="24" id="m20b"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="main_BTN_setName" destination="main-setname-btn" id="m-out-01"/>
+                        <outlet property="main_BTN_start" destination="main-start-btn" id="m-out-02"/>
+                        <outlet property="main_LBL_greeting" destination="main-greeting-lbl" id="m-out-03"/>
+                        <outlet property="main_LBL_sideStatus" destination="main-side-lbl" id="m-out-04"/>
+                        <outlet property="main_VIEW_leftPanel" destination="main-left-panel" id="m-out-05"/>
+                        <outlet property="main_VIEW_rightPanel" destination="main-right-panel" id="m-out-06"/>
+                        <segue destination="duel-vc" kind="show" identifier="showDuel" id="m-segue-duel"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="main-fr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+
+        <!-- SCREEN 2: Duel / Game -->
+        <scene sceneID="duel-scene">
+            <objects>
+                <viewController id="duel-vc" customClass="DuelViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="duel-view">
+                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <!-- Left player name -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duel-lname-lbl">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <!-- Left player score -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duel-lscore-lbl">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <!-- Right player name -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPU" textAlignment="right" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duel-rname-lbl">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <!-- Right player score -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duel-rscore-lbl">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <!-- Left card -->
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="duel-lcard-img"/>
+                            <!-- Right card -->
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="duel-rcard-img"/>
+                            <!-- Win/Lose label under left card -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duel-lresult-lbl">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <!-- Win/Lose label under right card -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duel-rresult-lbl">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <!-- Timer icon -->
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="duel-timer-img"/>
+                            <!-- Countdown number -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duel-count-lbl">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <!-- Round info -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 1 / 10" textAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duel-round-lbl">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeAreaLayoutGuide" id="duel-safe"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints/>
+                    </view>
+                    <connections>
+                        <outlet property="duel_LBL_playerName" destination="duel-lname-lbl" id="d-out-01"/>
+                        <outlet property="duel_LBL_playerScore" destination="duel-lscore-lbl" id="d-out-02"/>
+                        <outlet property="duel_LBL_opponentName" destination="duel-rname-lbl" id="d-out-03"/>
+                        <outlet property="duel_LBL_opponentScore" destination="duel-rscore-lbl" id="d-out-04"/>
+                        <outlet property="duel_IMG_playerCard" destination="duel-lcard-img" id="d-out-05"/>
+                        <outlet property="duel_IMG_opponentCard" destination="duel-rcard-img" id="d-out-06"/>
+                        <outlet property="duel_LBL_playerResult" destination="duel-lresult-lbl" id="d-out-07"/>
+                        <outlet property="duel_LBL_opponentResult" destination="duel-rresult-lbl" id="d-out-08"/>
+                        <outlet property="duel_IMG_timerIcon" destination="duel-timer-img" id="d-out-09"/>
+                        <outlet property="duel_LBL_timerCount" destination="duel-count-lbl" id="d-out-10"/>
+                        <outlet property="duel_LBL_roundInfo" destination="duel-round-lbl" id="d-out-11"/>
+                        <segue destination="summary-vc" kind="show" identifier="showSummary" id="d-segue-sum"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duel-fr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+
+        <!-- SCREEN 3: Summary / Results -->
+        <scene sceneID="summary-scene">
+            <objects>
+                <viewController id="summary-vc" customClass="SummaryViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="summary-view">
+                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner: -" textAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sum-winner-lbl">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sum-score-lbl">
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sum-menu-btn">
+                                <state key="normal" title="MAIN MENU"/>
+                                <connections>
+                                    <action selector="tappedMainMenu:" destination="summary-vc" eventType="touchUpInside" id="sum-menu-act"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeAreaLayoutGuide" id="sum-safe"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sum-winner-lbl" firstAttribute="centerX" secondItem="summary-view" secondAttribute="centerX" id="s01"/>
+                            <constraint firstItem="sum-winner-lbl" firstAttribute="centerY" secondItem="summary-view" secondAttribute="centerY" constant="-60" id="s02"/>
+                            <constraint firstItem="sum-winner-lbl" firstAttribute="width" constant="400" id="s03"/>
+                            <constraint firstItem="sum-winner-lbl" firstAttribute="height" constant="50" id="s03b"/>
+                            <constraint firstItem="sum-score-lbl" firstAttribute="centerX" secondItem="summary-view" secondAttribute="centerX" id="s04"/>
+                            <constraint firstItem="sum-score-lbl" firstAttribute="top" secondItem="sum-winner-lbl" secondAttribute="bottom" constant="16" id="s05"/>
+                            <constraint firstItem="sum-score-lbl" firstAttribute="width" constant="300" id="s06"/>
+                            <constraint firstItem="sum-score-lbl" firstAttribute="height" constant="40" id="s06b"/>
+                            <constraint firstItem="sum-menu-btn" firstAttribute="centerX" secondItem="summary-view" secondAttribute="centerX" id="s07"/>
+                            <constraint firstItem="sum-menu-btn" firstAttribute="top" secondItem="sum-score-lbl" secondAttribute="bottom" constant="24" id="s08"/>
+                            <constraint firstItem="sum-menu-btn" firstAttribute="width" constant="200" id="s09"/>
+                            <constraint firstItem="sum-menu-btn" firstAttribute="height" constant="44" id="s09b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="summary_LBL_winner" destination="sum-winner-lbl" id="s-out-01"/>
+                        <outlet property="summary_LBL_score" destination="sum-score-lbl" id="s-out-02"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sum-fr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+
     </scenes>
 </document>
