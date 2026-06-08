@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  CardDuel
-//
-//  Created by Carmel Nergaon on 03/06/2026.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
