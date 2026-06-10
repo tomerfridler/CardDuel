@@ -4,7 +4,7 @@ An iOS card game for two players that uses real-time location to assign each pla
 
 ## About the App
 
-CardDuel is a two-player card duel game built in Swift using UIKit.  
+CardDuel is a two-player card duel game. 
 Each player sits on one side of a reference point — west or east — determined automatically by GPS location.  
 The game runs for 10 rounds. Each round, a countdown timer flips two random cards and the higher card wins the point. At the end of 10 rounds, the player with the most points wins
 
